@@ -30,12 +30,3 @@ suites:
 
         spec_path: tests
 
-    codeception_config_suite:
-        namespace: CodeceptionConfig
-
-        #this should be identical to the psr-4 namespacing that you set up in the composer.json file
-        psr4_prefix: CodeceptionConfig
-        #this should be identical to the psr-4 path that you set up in the composer.json file relative to this suite's namespace
-        src_path: codeception-config
-
-        spec_path: codeception-config
