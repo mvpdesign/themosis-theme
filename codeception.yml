@@ -1,0 +1,56 @@
+# Codeception Global config file
+#
+# To use codeception in the terminal run ./vendor/bin/codecept <command name> or add the prefix to your path.
+#
+# To change the default structure of the codeception directory structure edit the paths in this file.
+#
+# To Add a mock database set the credentials in the modules section of this file.
+#
+# If you wish to add any new testing suites set them up in this file.
+#
+# To review the codeception config docs go to this link http://codeception.com/docs/reference/Configuration
+
+paths:
+    
+    # where the test modules are stored
+    tests: tests/codeception
+
+    log: tests/codeception/_log
+
+    # directory for fixture data
+    data: tests/codeception/_data
+
+    #
+    helpers: tests/codeception/_helpers
+
+settings:
+    
+    # name of bootstrap that will be used
+    # each bootstrap file should be 
+    # inside a suite directory.
+    bootstrap: tests/codeception/_bootstrap.php
+
+    # You can extend the suite class if you need to.
+    suite_class: \PHPUnit_Framework_TestSuite
+
+    colors: true
+
+    # Tests (especially functional) can take a lot of memory
+    # We set a high limit for them by default.
+    memory_limit: 1024M
+
+    log: true
+
+modules:
+
+    config:
+
+        Db:
+
+            dsn: ''
+
+            user: ''
+
+            password: ''
+
+            dump: tests/_data/dump.sql

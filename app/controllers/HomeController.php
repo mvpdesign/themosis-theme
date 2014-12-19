@@ -12,6 +12,16 @@ class HomeController extends BaseController
     protected $layout = 'layouts.default';
 
     /**
+     * Returns the layout property
+     *
+     * @return string $layout
+     */
+    public function getLayout()
+    {
+        return $this->layout;
+    }
+
+    /**
      * The default method
      *
      * @return void
