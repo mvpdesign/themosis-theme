@@ -29,4 +29,3 @@ suites:
         src_path: app
 
         spec_path: tests
-
