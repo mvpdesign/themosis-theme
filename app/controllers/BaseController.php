@@ -4,8 +4,8 @@ namespace MVPDesign\ThemosisTheme\Controllers;
 use Controller;
 use View;
 use Asset;
-use MVPDesign\ThemosisTheme\Models\WPGeneral;
-use MVPDesign\ThemosisTheme\Models\ThemosisTheme;
+use MVPDesign\ThemosisTheme\Models\WordPress\General;
+use MVPDesign\ThemosisTheme\Models\Theme\Theme;
 
 class BaseController extends Controller
 {

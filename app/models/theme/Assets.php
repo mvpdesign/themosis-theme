@@ -1,7 +1,9 @@
 <?php
-namespace MVPDesign\ThemosisTheme\Models;
+namespace MVPDesign\ThemosisTheme\Models\Theme;
 
-class ThemosisAssets
+use MVPDesign\ThemosisTheme\Models\WordPress\Theme;
+
+class Assets
 {
     /**
      * assets directory
@@ -52,7 +54,7 @@ class ThemosisAssets
      */
     public static function css($path = '')
     {
-        return self::path(self::$distDir . '/' . self::$cssDir . '/' . $path);
+        return self::path(self::$cssDir . '/' . $path);
     }
 
     /**
@@ -62,7 +64,7 @@ class ThemosisAssets
      */
     public static function image($path = '')
     {
-        return self::path(self::$distDir . '/' . self::$imagesDir . '/' . $path);
+        return self::path(self::$imagesDir . '/' . $path);
     }
 
     /**
@@ -72,7 +74,7 @@ class ThemosisAssets
      */
     public static function js($path = '')
     {
-        return self::path(self::$distDir . '/' . self::$jsDir . '/' . $path);
+        return self::path(self::$jsDir . '/' . $path);
     }
 
     /**
@@ -82,26 +84,16 @@ class ThemosisAssets
      */
     public static function font($path = '')
     {
-        return self::path(self::$distDir . '/' . self::$fontsDir . '/' . $path);
+        return self::path(self::$fontsDir . '/' . $path);
     }
 
     /**
-     * Return a path to the assets directory
+     * Returns the path to the assets directory
      *
      * @return string
      */
     public static function path($path = '')
     {
-        return self::url() . $path;
-    }
-
-    /**
-     * Returns the URL path to the assets directory
-     *
-     * @return string
-     */
-    public static function url()
-    {
-        return get_template_directory_uri() . '/' . self::$assetsDir . '/';
+        return Theme::getTemplateDirectoryURI() . '/' . self::$assetsDir . '/' . self::$distDir . '/' . $path;
     }
 }

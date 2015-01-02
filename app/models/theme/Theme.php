@@ -1,7 +1,7 @@
 <?php
-namespace MVPDesign\ThemosisTheme\Models;
+namespace MVPDesign\ThemosisTheme\Models\Theme;
 
-class ThemosisTheme
+class Theme
 {
     /**
      * is the theme responsive

@@ -1,7 +1,7 @@
 <?php
-namespace MVPDesign\ThemosisTheme\Models;
+namespace MVPDesign\ThemosisTheme\Models\WordPress;
 
-class WPGeneral
+class General
 {
     /**
      * Return the language HTML attributes
