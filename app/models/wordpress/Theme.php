@@ -8,7 +8,7 @@ class Theme
      *
      * @return string
      */
-    public static function getTemplateDirectoryURI()
+    public function getTemplateDirectoryURI()
     {
         return get_template_directory_uri();
     }

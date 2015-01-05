@@ -3,7 +3,7 @@
     "description": "The Themosis framework theme.",
     "keywords": ["themosis", "framework", "WordPress", "theme"],
     "license": "GPL-2.0+",
-    "authors":[
+    "authors": [
         {
             "name": "Julien Lambé",
             "email": "julien@themosis.com",
@@ -20,27 +20,25 @@
         "php": ">=5.4",
         "composer/installers" : "~1.0",
         "codeception/codeception": "*",
-        "behat/behat": "2.4.*@stable",
         "behat/mink": "1.5.*@stable",
         "behat/mink-goutte-driver": "*",
         "behat/mink-extension": "*",
         "behat/mink-selenium2-driver": "*"
     },
-    "require-dev":{
-        "php": ">=5.4",
-        "phpspec/phpspec": "2.1"
+    "require-dev": {
+        "phpspec/phpspec": "2.1",
+        "behat/behat": "3.0.14",
+        "mockery/mockery": "0.9.*"
     },
-    "autoload":{
-                
+    "config": {
+        "bin-dir": "bin/"
+    },
+    "autoload": {
         "psr-4": {
-
-            "MVPDesign\\ThemosisTheme\\": "app",
-            "CodeceptionConfig\\": "codeception-config"
-            
-        },
-        "psr-0":{
-            
+            "MVPDesign\\ThemosisTheme\\Controllers\\": "app/controllers",
+            "MVPDesign\\ThemosisTheme\\Models\\WordPress\\": "app/models/wordpress",
+            "MVPDesign\\ThemosisTheme\\Models\\Theme\\": "app/models/theme",
+            "MVPDesign\\ThemosisTheme\\Models\\": "app/models"
         }
-
     }
 }

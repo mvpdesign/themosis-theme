@@ -10,51 +10,64 @@ class Assets
      *
      * @var string
      */
-    private static $assetsDir = 'app/assets';
+    private $assetsDir = 'app/assets';
 
     /**
      * distribution directory
      *
      * @var string
      */
-    private static $distDir = 'dist';
+    private $distDir = 'dist';
 
     /**
      * css directory
      *
      * @var string
      */
-    private static $cssDir = 'css';
+    private $cssDir = 'css';
 
     /**
      * images directory
      *
      * @var string
      */
-    private static $imagesDir = 'images';
+    private $imagesDir = 'images';
 
     /**
      * javascript directory
      *
      * @var string
      */
-    private static $jsDir = 'js';
+    private $jsDir = 'js';
 
     /**
      * fonts directory
      *
      * @var string
      */
-    private static $fontsDir = 'fonts';
+    private $fontsDir = 'fonts';
+
+    /**
+     * Constructor
+     *
+     */
+    public function __construct($theme = false)
+    {
+        if (! $theme) {
+            $theme = new Theme;
+        }
+
+        $this->theme = $theme;
+    }
 
     /**
      * Return a path to the css assets directory
      *
      * @return string
      */
-    public static function css($path = '')
+    public function css($path = '')
     {
-        return self::path(self::$cssDir . '/' . $path);
+        return $this->path($this->cssDir . '/' . $path);
     }
 
     /**
@@ -62,9 +75,9 @@ class Assets
      *
      * @return string
      */
-    public static function image($path = '')
+    public function image($path = '')
     {
-        return self::path(self::$imagesDir . '/' . $path);
+        return $this->path($this->imagesDir . '/' . $path);
     }
 
     /**
@@ -72,9 +85,9 @@ class Assets
      *
      * @return string
      */
-    public static function js($path = '')
+    public function js($path = '')
     {
-        return self::path(self::$jsDir . '/' . $path);
+        return $this->path($this->jsDir . '/' . $path);
     }
 
     /**
@@ -82,9 +95,9 @@ class Assets
      *
      * @return string
      */
-    public static function font($path = '')
+    public function font($path = '')
     {
-        return self::path(self::$fontsDir . '/' . $path);
+        return $this->path($this->fontsDir . '/' . $path);
     }
 
     /**
@@ -92,8 +105,8 @@ class Assets
      *
      * @return string
      */
-    public static function path($path = '')
+    public function path($path = '')
     {
-        return Theme::getTemplateDirectoryURI() . '/' . self::$assetsDir . '/' . self::$distDir . '/' . $path;
+        return $this->theme->getTemplateDirectoryURI() . '/' . $this->assetsDir . '/' . $this->distDir . '/' . $path;
     }
 }

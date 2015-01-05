@@ -5,6 +5,7 @@ Thumbs.db
 ### Composer
 composer.lock
 /vendor/
+/bin/
 
 ### Node
 node_modules
