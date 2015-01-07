@@ -8,14 +8,9 @@ var imagemin      = require('gulp-imagemin');
 
 // Images task
 gulp.task('images', function() {
-    runSequence(
-        'clean-images',
-        function() {
-            return gulp.src(config.paths.src.images.all)
-                .pipe(changed(config.paths.dist.images.path))
-                .pipe(imagemin(config.imagemin))
-                .pipe(gulp.dest(config.paths.dist.images.path))
-                .pipe(handleSuccess(config.notify.messages.images));
-        }
-    );
+    return gulp.src(config.paths.src.images.all)
+        .pipe(changed(config.paths.dist.images.path))
+        .pipe(imagemin(config.imagemin))
+        .pipe(gulp.dest(config.paths.dist.images.path))
+        .pipe(handleSuccess(config.notify.messages.images));
 });

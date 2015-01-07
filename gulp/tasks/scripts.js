@@ -16,7 +16,6 @@ gulp.task('scripts', function() {
     var deferred = Q.defer();
 
     runSequence(
-        'clean-js',
         'modernizr',
         function() {
             gulp.src([config.paths.dist.js.modernizr, config.paths.dist.js.main, config.paths.dist.js.coffee])

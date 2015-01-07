@@ -7,13 +7,8 @@ var changed       = require('gulp-changed');
 
 // Fonts task
 gulp.task('fonts', function() {
-    runSequence(
-        'clean-fonts',
-        function() {
-            return gulp.src(config.paths.src.fonts.all)
-                .pipe(changed(config.paths.dist.fonts.path))
-                .pipe(gulp.dest(config.paths.dist.fonts.path))
-                .pipe(handleSuccess(config.notify.messages.fonts));
-        }
-    );
+    return gulp.src(config.paths.src.fonts.all)
+        .pipe(changed(config.paths.dist.fonts.path))
+        .pipe(gulp.dest(config.paths.dist.fonts.path))
+        .pipe(handleSuccess(config.notify.messages.fonts));
 });

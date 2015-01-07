@@ -15,7 +15,6 @@ var header        = require('gulp-header');
 // Styles task
 gulp.task('styles', function() {
     runSequence(
-        'clean-css',
         'sass',
         function() {
             return gulp.src([config.paths.dist.css.main])
