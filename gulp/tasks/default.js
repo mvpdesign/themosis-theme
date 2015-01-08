@@ -1,11 +1,5 @@
 // Default task requirements
-var gulp        = require('gulp');
-var runSequence = require('run-sequence');
+var gulp = require('gulp');
 
 // Default task
-gulp.task('default', function() {
-    runSequence(
-        'clean',
-        ['styles', 'scripts', 'images', 'fonts']
-    );
-});
+gulp.task('default', ['styles', 'scripts', 'images', 'fonts']);
