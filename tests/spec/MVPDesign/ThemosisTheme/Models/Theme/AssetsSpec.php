@@ -6,8 +6,6 @@ use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Mockery;
 
-//require_once('../../../wp/wp-load.php');
-
 class AssetsSpec extends ObjectBehavior
 {
     public function let()
