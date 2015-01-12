@@ -27,7 +27,7 @@ module.exports = {
                 all: ASSETS_SRC_PATH+'images/**/*'
             },
             fonts: {
-                all: ASSETS_SRC_PATH+'fonts/**/*'
+                all: ASSETS_SRC_PATH+'fonts/**/*.{otf,ttf}'
             }
         },
         dist: {
