@@ -9,6 +9,5 @@ gulp.task('generate-fonts', function() {
         .pipe(fontgen({
             dest: config.paths.dist.fonts.path,
             css_fontpath: config.fontgen.css_fontpath
-        }))
-        .pipe(gulp.dest(config.paths.dist.css.path));
+        }));
 });
