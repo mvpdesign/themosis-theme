@@ -34,7 +34,8 @@ module.exports = {
             path: ASSSETS_DIST_PATH,
             css: {
                 path: ASSSETS_DIST_PATH+'css/',
-                main: ASSSETS_DIST_PATH+'css/main.css'
+                main: ASSSETS_DIST_PATH+'css/main.css',
+                fonts: ASSSETS_DIST_PATH+'css/fonts.css'
             },
             js: {
                 path: ASSSETS_DIST_PATH+'js/',
@@ -46,7 +47,8 @@ module.exports = {
                 path: ASSSETS_DIST_PATH+'images/'
             },
             fonts: {
-                path: ASSSETS_DIST_PATH+'fonts/'
+                path: ASSSETS_DIST_PATH+'fonts/',
+                css: ASSSETS_DIST_PATH+'fonts/**/*.css'
             }
         }
     },
@@ -130,7 +132,8 @@ module.exports = {
     // https://www.npmjs.com/package/gulp-concat
     concat: {
         css: 'app.min.css',
-        js: 'app.min.js'
+        js: 'app.min.js',
+        fonts: 'fonts.css'
     },
     // https://www.npmjs.com/package/gulp-imagemin
     imagemin: {
@@ -140,6 +143,10 @@ module.exports = {
             removeViewBox: false
         }],
         use: [pngquant()]
+    },
+    // https://www.npmjs.com/package/fontfacegen
+    fontgen: {
+        css_fontpath: '../fonts'
     },
     // https://www.npmjs.com/package/gulp-header
     header: '/*\n' +

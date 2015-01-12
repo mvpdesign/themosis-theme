@@ -15,9 +15,10 @@ var header        = require('gulp-header');
 // Styles task
 gulp.task('styles', function() {
     runSequence(
+        'fonts',
         'sass',
         function() {
-            return gulp.src([config.paths.dist.css.main])
+            return gulp.src([config.paths.dist.css.fonts, config.paths.dist.css.main])
                 .pipe(gulpif(config.environment === 'local', sourcemaps.init(config.sourcemaps.styles.init)))
                 .pipe(concat(config.concat.css))
                 .pipe(autoprefixer(config.autoprefixer))
