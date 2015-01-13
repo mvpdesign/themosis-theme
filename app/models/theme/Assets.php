@@ -1,7 +1,7 @@
 <?php
 namespace MVPDesign\ThemosisTheme\Models\Theme;
 
-use MVPDesign\ThemosisTheme\Models\WordPress\Theme;
+use MVPDesign\ThemosisTheme\Models\WordPress;
 
 class Assets
 {
@@ -54,7 +54,7 @@ class Assets
     public function __construct($theme = false)
     {
         if (! $theme) {
-            $theme = new Theme;
+            $theme = new WordPress\Theme;
         }
 
         $this->theme = $theme;
