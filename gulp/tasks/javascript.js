@@ -13,9 +13,9 @@ var gulpif        = require('gulp-if');
 gulp.task('javascript', function() {
     var browserified = transform(function(filename) {
         var b = browserify(filename, gulpif(config.environment === 'local', {debug: true}))
-            .transform(coffeeify)
-            .transform(debowerify)
             .transform(reactify);
+            .transform(coffeeify)
+            .transform(debowerify);
         return b.bundle();
     });
 
