@@ -21,7 +21,7 @@
         "composer/installers" : "~1.0"
     },
     "require-dev": {
-        "phpspec/phpspec": "2.1",
+        "phpspec/phpspec": "2.1.1",
         "behat/behat": "3.0.14",
         "mockery/mockery": "0.9.*",
         "codeception/codeception": "*"
