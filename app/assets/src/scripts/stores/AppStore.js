@@ -8,11 +8,9 @@ AppCollection = Backbone.Collection.extend([], {
     model: AppModel,
     initialize: function() {
         AppDispatcher.register(function(payload) {
-            var action = payload.action;
-
-            switch(action.actionType) {
+            switch(payload.actionType) {
               default:
-                return true;
+                // do nothing
             }
         });
     }
