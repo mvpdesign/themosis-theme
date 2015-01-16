@@ -8,12 +8,14 @@
     "type": "git"
   },
   "devDependencies": {
+    "backbone": "^1.1.2",
     "browser-sync": "^1.8.0",
     "browserify": "^7.0.2",
     "coffeeify": "^1.0.0",
     "debowerify": "^1.2.0",
     "del": "^1.1.0",
     "fastclick": "^1.0.3",
+    "flux": "^2.0.1",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.0.0",
     "gulp-changed": "^1.1.0",
@@ -34,6 +36,7 @@
     "keymirror": "^0.1.0",
     "node.extend": "^1.1.3",
     "q": "^1.1.2",
+    "react": "^0.12.2",
     "reactify": "^0.17.1",
     "require-dir": "^0.1.0",
     "respimage": "^1.2.1",
