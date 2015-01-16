@@ -4,7 +4,7 @@ var Backbone      = require('backbone');
 
 AppModel = Backbone.Model.extend({});
 
-AppCollection = Backbone.collection.extend([], {
+AppCollection = Backbone.Collection.extend([], {
     model: AppModel,
     initialize: function() {
         AppDispatcher.register(function(payload) {
