@@ -12,4 +12,15 @@ class Theme
     {
         return get_template_directory_uri();
     }
+
+    /**
+     * Absolute path to the directory of the current theme (without the trailing slash).
+     *
+     * @return string
+     */
+    public function getTemplateDirectory()
+    {
+        return get_template_directory();
+    }
+
 }
