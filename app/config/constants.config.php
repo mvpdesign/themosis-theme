@@ -32,4 +32,7 @@ return array(
     // google analytics
     'GOOGLE_ANALYTICS_URL' => '//www.google-analytics.com',
     'GOOGLE_ANALYTICS_ID'  => '',
+
+    // WP Migrate Pro
+    'WPMDB_LICENCE' => ''
 );
