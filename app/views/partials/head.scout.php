@@ -18,7 +18,7 @@
     <!-- WordPress Head -->
     @section('beforeWPHead')
     @show
-    <?php wp_head(); ?>
+    {{ $wpHead }}
     @section('afterWPHead')
     @show
 </head>

@@ -5,6 +5,7 @@ use Controller;
 use View;
 use Asset;
 use MVPDesign\ThemosisTheme\Models\Theme;
+use MVPDesign\ThemosisTheme\Models\WordPress;
 
 class BaseController extends Controller
 {
@@ -16,18 +17,31 @@ class BaseController extends Controller
     private $theme;
 
     /**
+     * wordpress general model
+     *
+     * @var string
+     */
+    private $general;
+
+    /**
      * Constructor
      */
     public function __construct()
     {
+        add_filter('show_admin_bar', array($this, 'adminBar'));
+
         $this->theme = new Theme\Theme;
+        $this->general = new WordPress\General;
 
         $globals = array(
             'isResponsive'           => $this->theme->isResponsive(),
             'isUsingGoogleAnalytics' => $this->theme->isUsingGoogleAnalytics(),
             'isUsingGoogleFonts'     => $this->theme->isUsingGoogleFonts(),
             'isUsingTypekit'         => $this->theme->isUsingTypekit(),
-            'isUsingTypography'      => $this->theme->isUsingTypography()
+            'isUsingTypography'      => $this->theme->isUsingTypography(),
+            'isHome'                 => is_front_page(),
+            'siteTitle'              => $this->general->getBlogInfo('name'),
+            'siteUrl'                => $this->general->getBlogInfo('url')
         );
 
         // attach css & js files
@@ -48,5 +62,17 @@ class BaseController extends Controller
         if (! is_null($this->layout)) {
             $this->layout = View::make($this->layout);
         }
+    }
+
+    /**
+     * Remove admin bar styling
+     *
+     * @return void
+     */
+    public function adminBar($show_admin_bar)
+    {
+        remove_action('wp_head', '_admin_bar_bump_cb');
+
+        return $show_admin_bar;
     }
 }

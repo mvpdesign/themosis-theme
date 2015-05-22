@@ -22,5 +22,4 @@ class Theme
     {
         return get_template_directory();
     }
-
 }

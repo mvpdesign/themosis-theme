@@ -4,11 +4,8 @@
  * application.php - Write your custom code below.
  */
 
-// all svg media uploads
-function cc_mime_types($mimes)
+//add_action('admin_menu', 'removeMenus');
+function removeMenus()
 {
-    $mimes['svg'] = 'image/svg+xml';
-    $mimes['svgz'] = 'image/svg+xml';
-    return $mimes;
+    remove_menu_page('edit-comments.php');
 }
-add_filter('upload_mimes', 'cc_mime_types');
