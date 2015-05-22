@@ -17,7 +17,7 @@ return array(
     // google fonts
     // <link href='http://fonts.googleapis.com/css?family={{ GOOGLE_FONTS }}' rel='stylesheet' type='text/css'>
     'GOOGLE_FONTS_URL' => '//fonts.googleapis.com',
-    'GOOGLE_FONTS'     => 'Open Sans:400italic,400', // Open Sans:400,700|Roboto:100,300italic
+    'GOOGLE_FONTS'     => '', // Open Sans:400,700|Roboto:100,300italic
 
     // typekit
     'TYPEKIT_KIT_URL' => '//use.typekit.net',
