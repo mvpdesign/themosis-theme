@@ -26,7 +26,42 @@ View::composer('partials.html', function ($view) {
     $general = new WordPress\General;
 
     $data = array(
-        'languageAttributes' => $general->getLanguageAttributes()
+        'languageAttributes' => $general->getLanguageAttributes(),
+        'isAdminBarShowing' => is_admin_bar_showing()
+    );
+
+    $view->with($data);
+});
+
+// head partial
+View::composer('partials.head', function ($view) {
+    $general = new WordPress\General;
+
+    $data = array(
+        'wpHead' => $general->wpHead()
+    );
+
+    $view->with($data);
+});
+
+// favicons partial
+View::composer('includes.favicons', function ($view) {
+    $theme = new WordPress\Theme;
+
+    $data = array(
+        'templateDirectoryURI' => $theme->getTemplateDirectoryURI()
+    );
+
+    $view->with($data);
+});
+
+// body partial
+View::composer('partials.body', function ($view) {
+    $general = new WordPress\General;
+
+    $data = array(
+        'bodyClass' => $general->getBodyClass(),
+        'wpFooter'  => $general->wpFooter()
     );
 
     $view->with($data);
